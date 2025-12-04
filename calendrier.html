@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendrier de disponibilité – DocuFast</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@500;700&display=swap"
+            rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="output.css" />
+</head>
+
+<body class="min-h-screen bg-[#FFEFE4] font-[Montserrat] text-[#222020]">
+<header class="bg-gradient-to-r from-[#FFC6C9] via-[#D8A7E7] to-[#6054EC] shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <img src="logo-docufast.png" class="h-10 w-auto" alt="Logo DocuFast" />
+            <p class="hidden sm:block text-xs text-white/80 leading-tight">
+                Gérez vos documents académiques
+            </p>
+        </div>
+
+        <nav class="hidden md:flex">
+            <ul class="flex items-center gap-10 text-[15px] font-[Poppins]">
+                <li><a href="acceuil.html" class="text-[#545252] font-bold">Accueil</a></li>
+                <li><a href="mesdocuments.html" class="text-[#545252] font-bold">Mes documents</a></li>
+                <li><a href="calendrier.html" class="text-[#B60C0C] font-semibold">Calendrier</a></li>
+                <li><a href="assistant.html" class="text-[#545252] font-semibold">Assistant</a></li>
+            </ul>
+        </nav>
+
+        <div class="hidden md:flex items-center gap-4">
+            <button
+                    class="px-4 py-1.5 rounded-2xl bg-[#6054EC] text-white text-xs font-bold shadow-lg">
+                Se Déconnecter
+            </button>
+            <div
+                    class="h-10 w-10 rounded-full bg-white flex items-center justify-center text-[#6054EC] font-bold">
+                F
+            </div>
+        </div>
+
+        <button id="menuBtn" class="md:hidden material-icons text-white text-3xl">
+            menu
+        </button>
+    </div>
+
+    <div
+            id="mobileMenu"
+            class="hidden flex flex-col bg-white text-[#222020] px-6 py-4 space-y-3 md:hidden shadow"
+    >
+        <a href="acceuil.html" class="font-semibold">Accueil</a>
+        <a href="mesdocuments.html" class="font-semibold">Mes documents</a>
+        <a href="calendrier.html" class="font-bold text-[#B60C0C]">Calendrier</a>
+        <a href="assistant.html" class="font-semibold">Assistant</a>
+
+        <button class="w-full px-4 py-2 rounded-xl bg-[#6054EC] text-white font-bold mt-2">
+            Se Déconnecter
+        </button>
+    </div>
+</header>
+
+<script>
+    // Petit script pour ouvrir / fermer le menu mobile
+    document.getElementById("menuBtn").addEventListener("click", () => {
+        document.getElementById("mobileMenu").classList.toggle("hidden");
+    });
+</script>
+
+<main class="py-10 px-4 sm:px-6 lg:px-8">
+    <section class="max-w-6xl mx-auto">
+        <div class="text-center mb-10">
+            <h1 class="text-3xl sm:text-4xl font-extrabold uppercase mb-3">
+                Calendrier de disponibilité
+            </h1>
+            <p class="text-lg sm:text-xl font-medium">
+                Gérez vos rendez-vous, vos échéances et vos rappels en un seul endroit
+            </p>
+        </div>
+
+        <div class="flex flex-col lg:flex-row gap-8 lg:items-start">
+            <div class="bg-white rounded-[20px] border border-[#EF4444] px-6 py-6 flex-1">
+                <h2 class="text-2xl sm:text-3xl font-bold text-center mb-6">
+                    Novembre 2025
+                </h2>
+
+                <div class="grid grid-cols-7 text-center text-[14px] sm:text-[16px] font-bold mb-4">
+                    <span>LUN</span>
+                    <span>MA</span>
+                    <span>MER</span>
+                    <span>JEU</span>
+                    <span>VEN</span>
+                    <span>SAM</span>
+                    <span>DIM</span>
+                </div>
+
+                <div class="grid grid-cols-7 gap-3 text-[18px] sm:text-[20px] font-semibold text-[#B60C0C]">
+                    <div class="rounded-[20px] bg-[#FFF6F9] border border-[#B60C0C] flex items-center justify-center h-20">1</div>
+                    <div class="rounded-[20px] bg-[#FFF6F9] border border-[#B60C0C] flex items-center justify-center h-20">2</div>
+                    <div class="rounded-[20px] bg-[#FFF6F9] border border-[#B60C0C] flex items-center justify-center h-20">3</div>
+                    <div class="rounded-[20px] bg-[#FFF6F9] border border-[#B60C0C] flex items-center justify-center h-20">4</div>
+                    <div class="rounded-[20px] bg-[#FFF6F9] border border-[#B60C0C] flex items-center justify-center h-20">5</div>
+                    <div class="rounded-[20px] bg-[#FFF6F9] border border-[#B60C0C] flex items-center justify-center h-20">6</div>
+                    <div class="rounded-[20px] bg-[#FFF6F9] border border-[#B60C0C] flex items-center justify-center h-20">7</div>
+
+                    <div class="rounded-[20px] bg-[#FFF6F9] border border-[#B60C0C] flex items-center justify-center h-20">8</div>
+                    <div class="rounded-[20px] bg-[#FFF6F9] border border-[#B60C0C] flex items-center justify-center h-20">9</div>
+                    <div class="rounded-[20px] bg-[#FFF6F9] border border-[#B60C0C] flex items-center justify-center h-20">10</div>
+                    <div class="rounded-[20px] bg-[#FFF6F9] border border-[#B60C0C] flex items-center justify-center h-20">11</div>
+                    <div class="rounded-[20px] bg-[#FFF6F9] border border-[#B60C0C] flex items-center justify-center h-20">12</div>
+                    <div class="rounded-[20px] bg-[#FFF6F9] border border-[#B60C0C] flex items-center justify-center h-20">13</div>
+                    <div class="rounded-[20px] bg-[#F59180] border border-[#B60C0C] shadow-[0_4px_20px_rgba(0,0,0,0.25)] flex items-center justify-center h-20 text-white">
+                        15
+                    </div>
+
+                    <div class="rounded-[20px] bg-[#FFF6F9] border border-[#B60C0C] flex items-center justify-center h-20">16</div>
+                    <div class="rounded-[20px] bg-[#FFF6F9] border border-[#B60C0C] flex items-center justify-center h-20">17</div>
+                    <div class="rounded-[20px] bg-[#FFF6F9] border border-[#B60C0C] flex items-center justify-center h-20">18</div>
+                    <div class="rounded-[20px] bg-[#FFF6F9] border border-[#B60C0C] flex items-center justify-center h-20">19</div>
+                    <div class="rounded-[20px] bg-[#FFF6F9] border border-[#B60C0C] flex items-center justify-center h-20">20</div>
+                    <div class="rounded-[20px] bg-[#FFF6F9] border border-[#B60C0C] flex items-center justify-center h-20">21</div>
+                    <div class="rounded-[20px] bg-[#FFF6F9] border border-[#B60C0C] flex items-center justify-center h-20">22</div>
+
+                    <div class="rounded-[20px] bg-[#FFF6F9] border border-[#B60C0C] flex items-center justify-center h-20">23</div>
+                    <div class="rounded-[20px] bg-[#FFF6F9] border border-[#B60C0C] flex items-center justify-center h-20">24</div>
+                    <div class="rounded-[20px] bg-[#FFF6F9] border border-[#B60C0C] flex items-center justify-center h-20">25</div>
+                    <div class="rounded-[20px] bg-[#FFF6F9] border border-[#B60C0C] flex items-center justify-center h-20">26</div>
+                    <div class="rounded-[20px] bg-[#FFF6F9] border border-[#B60C0C] flex items-center justify-center h-20">27</div>
+                    <div class="rounded-[20px] bg-[#FFF6F9] border border-[#B60C0C] flex items-center justify-center h-20">28</div>
+                    <div class="rounded-[20px] bg-[#FFF6F9] border border-[#B60C0C] flex items-center justify-center h-20">29</div>
+
+                    <div class="rounded-[20px] bg-[#FFF6F9] border border-[#B60C0C] flex items-center justify-center h-20">30</div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+
+                <div class="mt-8 flex items-center gap-4 flex-wrap">
+                    <button
+                            class="px-6 py-3 rounded-[20px] bg-[#B60C0C] text-white text-[16px] font-semibold">
+                        Ajouter une discussion
+                    </button>
+                    <button
+                            class="px-6 py-3 rounded-[20px] border border-[#B60C0C] bg-[#FFF6F9] text-[#B60C0C] text-[16px] font-semibold">
+                        Ajouter un rappel
+                    </button>
+
+                    <button
+                            class="w-14 h-14 rounded-full bg-[#F59180] shadow-[0_4px_40px_rgba(0,0,0,0.25)] flex items-center justify-center ml-0 sm:ml-2">
+            <span class="material-icons text-black">
+              mic
+            </span>
+                    </button>
+                </div>
+            </div>
+
+            <aside class="bg-white rounded-[20px] border border-[#EF4444] px-5 py-6 w-full lg:w-[360px]">
+                <h3 class="text-[20px] font-extrabold text-center mb-1">Détails du jour</h3>
+                <p class="text-[18px] text-center">Aujourd’hui</p>
+                <p class="text-[16px] text-center text-[#18181B] mb-4">
+                    Mardi 15 novembre 2025
+                </p>
+
+                <div class="bg-[rgba(182,12,12,0.40)] rounded-[20px] px-4 py-3 mb-4">
+                    <div class="flex items-center gap-2 mb-1">
+            <span class="material-icons text-black text-[20px]">
+              description
+            </span>
+                        <p class="font-semibold text-[16px]">Rendez vous scolarité</p>
+                    </div>
+                    <p class="text-[14px]">Statut : confirmé</p>
+                    <p class="text-[14px] font-semibold mt-1">14:30</p>
+                </div>
+
+                <div class="bg-[rgba(182,12,12,0.40)] rounded-[20px] px-4 py-3 mb-4">
+                    <div class="flex items-center gap-2 mb-1">
+            <span class="material-icons text-black text-[20px]">
+              schedule
+            </span>
+                        <p class="font-semibold text-[16px]">Récupération affectation stage</p>
+                    </div>
+                    <p class="text-[14px]">Statut : confirmé</p>
+                    <p class="text-[14px] font-semibold mt-1">18:30</p>
+                </div>
+
+                <div class="bg-[rgba(182,12,12,0.40)] rounded-[20px] px-4 py-3">
+                    <div class="flex items-center gap-2 mb-1">
+            <span class="material-icons text-black text-[20px]">
+              bolt
+            </span>
+                        <p class="font-semibold text-[16px]">Suggestion intelligentes</p>
+                    </div>
+                    <p class="text-[14px]">3 démarches prêtes à l’échéance</p>
+                </div>
+            </aside>
+        </div>
+
+        <div
+                class="mt-10 flex items-center gap-3 rounded-2xl bg-[rgba(245,145,128,0.53)] px-4 sm:px-6 py-4">
+      <span class="material-icons text-black">
+        lightbulb
+      </span>
+            <p class="text-[15px] sm:text-[16px] font-semibold text-center w-full">
+                Astuce : Appuyez sur le bouton du microphone pour ajouter un événement en utilisant
+                votre voix.
+            </p>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-white shadow-lg mt-auto">
+    <div class="max-w-7xl mx-auto px-12 py-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left text-gray-700">
+            <div>
+                <h3 class="text-lg font-bold text-black mb-3">DocuFast</h3>
+                <p class="text-sm leading-relaxed">Plateforme de gestion administrative universitaire.</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold text-black mb-3">Navigation</h3>
+                <div class="space-y-1 text-sm">
+                    <p>Accueil</p>
+                    <p>Mes demandes</p>
+                    <p>Documents validés</p>
+                    <p>Nouvelle demande</p>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold text-black mb-3">Contact</h3>
+                <div class="space-y-1 text-sm">
+                    <p>Email</p>
+                    <p>LinkedIn</p>
+                    <p>Facebook</p>
+                </div>
+            </div>
+        </div>
+        <div class="h-px bg-gray-300 my-6"></div>
+        <div class="text-center text-gray-500 text-sm">© 2025 DocuFast</div>
+    </div>
+</footer>
+</body>
+</html>

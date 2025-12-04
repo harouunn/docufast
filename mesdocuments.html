@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DocuFast – Mes documents</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@500;700&display=swap"
+            rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="output.css" />
+</head>
+
+<body class="font-[Montserrat,_sans-serif] min-h-screen bg-gradient-to-b from-[#FFDEE3] via-[#FFF3F5] to-[#E4E4FF]">
+<header class="bg-gradient-to-r from-[#FFC6C9] via-[#D8A7E7] to-[#6054EC] shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <img src="logo-docufast.png" class="h-10 w-auto" alt="Logo DocuFast" />
+            <p class="hidden sm:block text-xs text-white/80 leading-tight">
+                Gérez vos documents académiques
+            </p>
+        </div>
+
+        <nav class="hidden md:flex">
+            <ul class="flex items-center gap-10 text-[15px] font-[Poppins]">
+                <li><a href="acceuil.html" class="text-[#545252] font-bold">Accueil</a></li>
+                <li><a href="mesdocuments.html" class="text-[#B60C0C] font-bold">Mes documents</a></li>
+                <li><a href="calendrier.html" class="text-[#545252] font-semibold">Calendrier</a></li>
+                <li><a href="assistant.html" class="text-[#545252] font-semibold">Assistant</a></li>
+            </ul>
+        </nav>
+
+        <div class="hidden md:flex items-center gap-4">
+            <button
+                    class="px-4 py-1.5 rounded-2xl bg-[#6054EC] text-white text-xs font-bold shadow-lg">
+                Se Déconnecter
+            </button>
+            <div
+                    class="h-10 w-10 rounded-full bg-white flex items-center justify-center text-[#6054EC] font-bold">
+                F
+            </div>
+        </div>
+
+        <button id="menuBtn" class="md:hidden material-icons text-white text-3xl">
+            menu
+        </button>
+    </div>
+
+    <div
+            id="mobileMenu"
+            class="hidden flex flex-col bg-white text-[#222020] px-6 py-4 space-y-3 md:hidden shadow"
+    >
+        <a href="acceuil.html" class="font-semibold">Accueil</a>
+        <a href="mesdocuments.html" class="font-bold text-[#B60C0C]">Mes documents</a>
+        <a href="calendrier.html" class="font-semibold">Calendrier</a>
+        <a href="assistant.html" class="font-semibold">Assistant</a>
+
+        <button class="w-full px-4 py-2 rounded-xl bg-[#6054EC] text-white font-bold mt-2">
+            Se Déconnecter
+        </button>
+    </div>
+</header>
+
+<script>
+    // Gestion du bouton hamburger pour cette page
+    document.getElementById("menuBtn").addEventListener("click", () => {
+        document.getElementById("mobileMenu").classList.toggle("hidden");
+    });
+</script>
+
+<main class="max-w-6xl mx-auto px-6 pb-16 pt-10 mt-10 bg-[#FFF9FA]/95 rounded-2xl
+ shadow-lg">
+    <section class="text-center pt-10">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-[#222020] tracking-wide">
+            ORGANISEZ VOS DOCUMENTS
+        </h1>
+
+        <p class="mt-3 text-[#545252] text-sm md:text-base">
+            Glissez et déposez vos documents dans les catégories ci dessous
+        </p>
+    </section>
+
+    <section class="mt-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div
+                    class="bg-white rounded-2xl shadow-[0_4px_10px_rgba(0,0,0,0.08)] p-8 flex flex-col items-center text-center">
+                <div class="w-10 h-10 mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                         stroke-width="1.5" stroke="#222020" class="w-full h-full">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M12 4.5H6.75A2.25 2.25 0 004.5 6.75v10.5A2.25 2.25 0 006.75 19.5h10.5A2.25 2.25 0 0019.5
+                    17.25V12m-7.5-7.5L19.5 12M12 4.5V12" />
+                    </svg>
+                </div>
+
+                <p class="text-sm text-[#545252]">
+                    Déposez les documents qui nécessitent une signature ici
+                </p>
+            </div>
+
+            <div
+                    class="bg-white rounded-2xl shadow-[0_4px_10px_rgba(0,0,0,0.08)] p-8 flex flex-col items-center text-center">
+                <div class="w-10 h-10 mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                         stroke-width="1.5" stroke="#222020" class="w-full h-full">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M9 12.75l2.25 2.25L15 9.75M21 12a9 9 0
+                    11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+
+                <p class="text-sm text-[#545252]">
+                    Déposez les documents pour validation finale
+                </p>
+            </div>
+
+            <div
+                    class="bg-white rounded-2xl shadow-[0_4px_10px_rgba(0,0,0,0.08)] p-8 flex flex-col items-center text-center">
+                <div class="w-10 h-10 mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                         stroke-width="1.5" stroke="#222020" class="w-full h-full">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M3.75 9.75L4.5 5.25h15l.75
+                    4.5M4.5 9.75h15v8.25a1.5 1.5 0 01-1.5 1.5h-12a1.5 1.5 0 01-1.5-1.5V9.75zM9 13.5h6" />
+                    </svg>
+                </div>
+
+                <p class="text-sm text-[#545252]">
+                    Déposez les documents terminés pour les archiver
+                </p>
+            </div>
+        </div>
+
+        <p class="mt-6 text-center text-[#545252] text-sm">
+            Vous pouvez déposer plusieurs fichiers à la fois
+        </p>
+    </section>
+
+    <section class="mt-14">
+        <h2 class="text-center text-3xl font-extrabold text-[#222020] mb-8 tracking-wide">
+            ACTIVITÉ RÉCENT
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-[#F3FFF6] px-6 py-4 rounded-xl shadow-sm flex items-center gap-3">
+                <div class="w-7 h-7 rounded-full border border-green-500 flex items-center justify-center">
+                    <span class="text-green-500 text-lg">✔</span>
+                </div>
+                <div class="text-xs md:text-sm">
+                    <p class="font-bold text-[#222020]">Contrat_final.pdf</p>
+                    <p class="text-[#545252]">Déposé dans “A Signer” il y a 3 min</p>
+                </div>
+            </div>
+
+            <div class="bg-[#F3F3FF] px-6 py-4 rounded-xl shadow-sm flex items-center gap-3">
+                <div class="w-7 h-7 rounded-full border border-[#6054EC] flex items-center justify-center">
+                    <span class="text-[#6054EC] text-lg">i</span>
+                </div>
+                <div class="text-xs md:text-sm">
+                    <p class="font-bold text-[#222020]">Facture_2023.pdf</p>
+                    <p class="text-[#545252]">Déposé dans “A Valider” il y a 1 heure</p>
+                </div>
+            </div>
+
+            <div class="bg-[#F3FFF6] px-6 py-4 rounded-xl shadow-sm flex items-center gap-3">
+                <div class="w-7 h-7 rounded-full border border-green-500 flex items-center justify-center">
+                    <span class="text-green-500 text-lg">✔</span>
+                </div>
+                <div class="text-xs md:text-sm">
+                    <p class="font-bold text-[#222020]">Attestation_présence.pdf</p>
+                    <p class="text-[#545252]">Déposé dans “A Signer” il y a 42 min</p>
+                </div>
+            </div>
+
+            <div class="bg-[#FFF2F2] px-6 py-4 rounded-xl shadow-sm flex items-center gap-3">
+                <div class="w-7 h-7 rounded-full border border-red-500 flex items-center justify-center">
+                    <span class="text-red-500 text-lg">!</span>
+                </div>
+                <div class="text-xs md:text-sm">
+                    <p class="font-bold text-[#222020]">image.jpg</p>
+                    <p class="text-[#545252]">Échec du dépôt : format non supporté</p>
+                </div>
+            </div>
+
+            <div class="bg-[#F3FFF6] px-6 py-4 rounded-xl shadow-sm flex items-center gap-3">
+                <div class="w-7 h-7 rounded-full border border-green-500 flex items-center justify-center">
+                    <span class="text-green-500 text-lg">✔</span>
+                </div>
+                <div class="text-xs md:text-sm">
+                    <p class="font-bold text-[#222020]">Convocation_stage.pdf</p>
+                    <p class="text-[#545252]">Déposé dans “A Signer” il y a 3 jours</p>
+                </div>
+            </div>
+
+            <div class="bg-[#FFF2F2] px-6 py-4 rounded-xl shadow-sm flex items-center gap-3">
+                <div class="w-7 h-7 rounded-full border border-red-500 flex items-center justify-center">
+                    <span class="text-red-500 text-lg">!</span>
+                </div>
+                <div class="text-xs md:text-sm">
+                    <p class="font-bold text-[#222020]">photo.png</p>
+                    <p class="text-[#545252]">Échec du dépôt : résolution non supportée</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-white shadow-lg mt-16">
+    <div class="max-w-7xl mx-auto px-12 py-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left text-gray-700">
+            <div>
+                <h3 class="text-lg font-bold text-black mb-3">DocuFast</h3>
+                <p class="text-sm leading-relaxed">Plateforme de gestion administrative universitaire.</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold text-black mb-3">Navigation</h3>
+                <div class="space-y-1 text-sm">
+                    <p>Accueil</p>
+                    <p>Mes demandes</p>
+                    <p>Documents validés</p>
+                    <p>Nouvelle demande</p>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold text-black mb-3">Contact</h3>
+                <div class="space-y-1 text-sm">
+                    <p>Email</p>
+                    <p>LinkedIn</p>
+                    <p>Facebook</p>
+                </div>
+            </div>
+        </div>
+        <div class="h-px bg-gray-300 my-6"></div>
+        <div class="text-center text-gray-500 text-sm">© 2025 DocuFast</div>
+    </div>
+</footer>
+</body>
+</html>

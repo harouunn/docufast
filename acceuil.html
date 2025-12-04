@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil – DocuFast</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+    <style>
+        body {
+            font-family: "Montserrat", sans-serif;
+            background: #f4f4ff;
+        }
+
+        /* --- Supprimer cadre des illustrations --- */
+        .illustration {
+            border-radius: 0 !important;
+            background: transparent !important;
+            padding: 0 !important;
+            box-shadow: none !important;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            width: 100%;
+            background: linear-gradient(90deg, #ffc0cb 0%, #fbcfe8 50%, #bfdbfe 100%);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Force Poppins everywhere in navbar */
+        .navbar, .navbar * {
+            font-family: "Poppins", sans-serif !important;
+        }
+
+
+        .navbar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-link-active {
+            color: #b60c0c;
+            font-weight: 800;
+        }
+
+        /* FOOTER */
+        .footer {
+            width: 50%;
+            max-width:1200px;
+            margin: 24px auto;
+            padding:18px 20px 10px;
+            background:#fff;
+            border-radius:15px;
+            box-shadow:0 4px 4px 5px rgba(0,0,0,0.25);
+        }
+        .footer-inner {
+            display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap;
+        }
+        .footer-bottom {
+            border-top:1px solid #545252;
+            margin-top:10px; text-align:center; padding-top:8px;
+        }
+        .footer-block-title {
+            font-weight: 900;
+            font-size: 17px;
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+<!-- 🔵 NAVBAR -->
+<header class="navbar">
+    <div class="navbar-inner">
+        <a href="accueil.html">
+            <img src="assets/logo.svg" class="h-10" />
+        </a>
+
+        <nav class="hidden md:flex">
+            <ul class="flex items-center gap-7 text-[15px] font-[Poppins]">
+                <li><a href="acceuil.html" class="text-[#B60C0C] font-bold">Accueil</a></li>
+                <li><a href="valide.html" class="text-[#545252] font-bold">Mes demandes</a></li>
+                <li><a href="assistant d'enchainement.html" class="text-[#545252] font-bold">Nouvelle demande</a></li>
+                <li><a href="assistantchat.html" class="text-[#545252] font-bold">Chatbot</a></li>
+                <li><a href="mesdocuments.html" class="text-[#545252] font-bold">Mes documents</a></li>
+                <li><a href="historique.html" class="text-[#545252] font-bold">Historique</a></li>
+
+            </ul>
+        </nav>
+
+        <div class="flex items-center gap-4">
+            <button
+                    onclick="window.location.href='login1.html'"
+                    class="bg-[#6054ec] text-white px-4 py-2 rounded-full shadow-md font-semibold cursor-pointer"
+            >
+                Se Déconnecter
+            </button>
+            <a href="profile.html">
+                <img src="assets/man.svg" class="rounded-full cursor-pointer">
+            </a>
+        </div>
+    </div>
+</header>
+
+
+
+<!-- 🟥 SECTION 1 — HERO -->
+<section class="max-w-6xl mx-auto mt-12 px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+
+    <div>
+        <h1 class="text-4xl font-extrabold leading-tight text-black">
+            ORGANISEZ VOS DOCUMENTS <br>
+            UNIVERSITAIRES <br>
+            EN UN CLIC.
+        </h1>
+
+        <p class="text-gray-600 mt-4 text-[17px] leading-relaxed">
+            Simplifiez toutes vos démarches administratives grâce à une plateforme moderne,
+            rapide et 100% sécurisée.
+        </p>
+
+        <a href="mesdemarches.html">
+            <button class="mt-5 bg-[#6054ec] text-white px-6 py-3 rounded-full shadow-lg text-[16px] font-semibold">
+                Ajouter une demande
+            </button>
+        </a>
+    </div>
+
+    <div class="flex justify-center">
+        <img src="assets/etudiante.png" class="illustration w-full max-w-md">
+    </div>
+
+</section>
+
+
+
+<!-- 🟧 SECTION 2 — DOCUFAST PRESENTATION -->
+<section class="max-w-6xl mx-auto mt-14 px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+
+    <div class="flex justify-center order-2 md:order-1">
+        <img src="assets/homme-validation.png" class="illustration w-full max-w-md">
+    </div>
+
+    <div class="order-1 md:order-2">
+        <h2 class="text-3xl font-extrabold text-black mb-2">DocuFast</h2>
+
+        <p class="text-gray-600 text-[17px] leading-relaxed">
+            Une plateforme simple et intelligente pour gérer toutes vos démarches académiques.
+        </p>
+    </div>
+
+</section>
+
+
+
+<!-- 🟦 SECTION 3 — Pourquoi DocuFast ? -->
+<section class="max-w-5xl mx-auto mt-14 px-6">
+    <h2 class="text-2xl font-extrabold mb-5 text-black">
+        POURQUOI CHOISIR <span class="text-[#b60c0c]">DocuFast</span> ?
+    </h2>
+
+    <div class="space-y-3">
+
+        <div class="bg-white p-4 rounded-xl shadow-md">
+            <p class="font-bold">⚡ Rapidité</p>
+            <p class="text-gray-600 text-sm md:text-base">
+                Vos documents sont générés et envoyés en quelques secondes.
+            </p>
+        </div>
+
+        <div class="bg-white p-4 rounded-xl shadow-md">
+            <p class="font-bold">🔒 Sécurité avancée</p>
+            <p class="text-gray-600 text-sm md:text-base">
+                Double chiffrement pour protéger vos données.
+            </p>
+        </div>
+
+        <div class="bg-white p-4 rounded-xl shadow-md">
+            <p class="font-bold">🎯 Plateforme intuitive</p>
+            <p class="text-gray-600 text-sm md:text-base">
+                Un espace simple, clair et pensé pour les étudiants.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- 🟪 SECTION 4 — Fonctionnalités -->
+<section class="max-w-6xl mx-auto mt-14 px-6 text-center">
+    <h2 class="text-2xl font-extrabold mb-7 text-[#b60c0c]">
+        CE QUE DOCUFAST PEUT FAIRE POUR VOUS
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-5">
+
+        <div class="bg-white p-5 rounded-xl shadow-md">
+            <p class="font-bold">📁 Gestion intelligente</p>
+            <p class="text-gray-600 mt-1 text-sm md:text-base">
+                Classement, génération automatique, archivage.
+            </p>
+        </div>
+
+        <div class="bg-white p-5 rounded-xl shadow-md">
+            <p class="font-bold">🔐 Espace sécurisé</p>
+            <p class="text-gray-600 mt-1 text-sm md:text-base">
+                Vos données sont protégées par un système avancé.
+            </p>
+        </div>
+
+        <div class="bg-white p-5 rounded-xl shadow-md">
+            <p class="font-bold">🤖 Automatisation</p>
+            <p class="text-gray-600 mt-1 text-sm md:text-base">
+                Des tâches répétitives gérées automatiquement.
+            </p>
+        </div>
+
+        <div class="bg-white p-5 rounded-xl shadow-md">
+            <p class="font-bold">🔔 Notifications</p>
+            <p class="text-gray-600 mt-1 text-sm md:text-base">
+                Soyez alerté dès qu’une étape change.
+            </p>
+        </div>
+
+        <div class="bg-white p-5 rounded-xl shadow-md">
+            <p class="font-bold">⏱️ Suivi en temps réel</p>
+            <p class="text-gray-600 mt-1 text-sm md:text-base">
+                Accédez à l’évolution de vos demandes instantanément.
+            </p>
+        </div>
+
+        <div class="bg-white p-5 rounded-xl shadow-md">
+            <p class="font-bold">📤 Partage sécurisé</p>
+            <p class="text-gray-600 mt-1 text-sm md:text-base">
+                Envoyez vos documents à vos enseignants ou administrations.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- 🟫 SECTION 5 — CTA Final -->
+<section class="max-w-6xl mx-auto mt-16 px-6 grid md:grid-cols-2 gap-8 items-center">
+
+    <div>
+        <h2 class="text-3xl font-extrabold text-black leading-tight">
+            PRÊT À SIMPLIFIER VOS DÉMARCHES ?
+        </h2>
+        <p class="text-gray-600 mt-2 text-[15px] md:text-base">
+            Rejoignez des milliers d’étudiants qui gagnent du temps grâce à DocuFast.
+        </p>
+
+        <button class="mt-5 bg-[#6054ec] text-white px-6 py-3 rounded-full shadow-lg text-[16px] font-semibold">
+            Commencer maintenant ⭐
+        </button>
+    </div>
+
+    <div class="flex justify-center">
+        <img src="assets/groupe-etudiants.png" class="illustration w-full max-w-md">
+    </div>
+</section>
+
+
+
+
+<!-- FOOTER -->
+<!-- Footer -->
+<footer class="bg-white shadow-lg mt-auto">
+    <div class="max-w-7xl mx-auto px-12 py-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left text-gray-700">
+            <div>
+                <h3 class="text-lg font-bold text-black mb-3">DocuFast</h3>
+                <p class="text-sm leading-relaxed">Plateforme de gestion administrative universitaire.</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold text-black mb-3">Navigation</h3>
+                <div class="space-y-1 text-sm">
+                    <p>Accueil</p>
+                    <p>Mes demandes</p>
+                    <p>Documents validés</p>
+                    <p>Nouvelle demande</p>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold text-black mb-3">Contact</h3>
+                <div class="space-y-1 text-sm">
+                    <p>Email</p>
+                    <p>LinkedIn</p>
+                    <p>Facebook</p>
+                </div>
+            </div>
+        </div>
+        <div class="h-px bg-gray-300 my-6"></div>
+        <div class="text-center text-gray-500 text-sm">© 2025 DocuFast</div>
+    </div>
+</footer>
+
+
+</body>
+</html>

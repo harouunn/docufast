@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profil – DocuFast</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        :root {
+            --red-main: #b60c0c;
+            --border-red: #ef4444;
+            --violet: #6054ec;
+            --rose-card: #fff6f9;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        body {
+            background:#f4f4ff;
+            font-family:"Montserrat", sans-serif;
+            min-height:100vh;
+            display:flex;
+            flex-direction:column;
+        }
+
+        a { text-decoration:none; color:inherit; }
+
+        /* SWITCH iOS */
+        .ios-switch {
+            width: 50px;
+            height: 28px;
+            border-radius: 999px;
+            background: #d1d5db;
+            position: relative;
+            transition: 0.25s ease;
+            cursor: pointer;
+            border: none;
+        }
+        .ios-switch[data-state="on"] { background: #4ade80; }
+
+        .ios-knob {
+            width: 22px;
+            height: 22px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            transition: 0.25s ease;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+
+        .ios-switch[data-state="on"] .ios-knob { transform: translateX(22px); }
+
+        .ios-knob::before { content:"🔘"; font-size:14px; }
+        .ios-switch[data-state="on"] .ios-knob::before { content:"⚡"; font-size:16px; }
+
+        /* NAVBAR */
+        .navbar {
+            width: 100%;
+            background: linear-gradient(90deg, #ffc0cb 0%, #fbcfe8 50%, #bfdbfe 100%);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Force Poppins everywhere in navbar */
+        .navbar, .navbar * {
+            font-family: "Poppins", sans-serif !important;
+        }
+
+
+        .navbar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-link-active {
+            color: #b60c0c;
+            font-weight: 800;
+        }
+
+        /* FOOTER */
+        .footer {
+            width: 50%;
+            max-width:1200px;
+            margin: 24px auto;
+            padding:18px 20px 10px;
+            background:#fff;
+            border-radius:15px;
+            box-shadow:0 4px 4px 5px rgba(0,0,0,0.25);
+        }
+        .footer-inner {
+            display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap;
+        }
+        .footer-bottom {
+            border-top:1px solid #545252;
+            margin-top:10px; text-align:center; padding-top:8px;
+        }
+        .footer-block-title {
+            font-weight: 900;
+            font-size: 17px;
+            margin-bottom: 4px;
+        }
+
+        /* PAGE */
+        .page { max-width:900px; margin:60px auto; padding:0 20px; flex:1; }
+        .section-title { text-align:center; font-size:32px; font-weight:800; margin-bottom:30px; }
+
+        /* CARD PROFIL */
+        .profile-card {
+            background:white; padding:35px 40px;
+            border-radius:20px; border:1px solid var(--border-red);
+            box-shadow:0 4px 12px rgba(0,0,0,0.15);
+            text-align:center; margin-bottom:40px;
+        }
+
+        .profile-img {
+            width:130px;
+            height:130px;
+            border-radius:50%;
+            border:3px solid var(--red-main);
+            background:var(--rose-card);
+            object-fit:cover;
+
+            /* NEW → centrer parfaitement */
+            display:block;
+            margin-left:auto;
+            margin-right:auto;
+            margin-bottom:20px;
+        }
+
+
+        /* PARAMETRES */
+        .settings-container {
+            background:white; padding:35px 45px;
+            border-radius:20px; border:1px solid var(--border-red);
+            box-shadow:0 4px 12px rgba(0,0,0,0.15);
+            margin-bottom:40px;
+        }
+        .settings-group { margin-bottom:30px; }
+        .group-title {
+            display:flex; align-items:center; gap:10px;
+            font-size:20px; font-weight:700; margin-bottom:15px;
+        }
+        .plus-icon {
+            width:20px; height:20px; border-radius:50%;
+            background:#ff4d4d; color:white;
+            display:flex; align-items:center; justify-content:center;
+        }
+        .setting-item {
+            display:flex; justify-content:space-between;
+            align-items:center; font-size:17px; margin-bottom:12px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+<!-- 🔵 NAVBAR -->
+<header class="navbar">
+    <div class="navbar-inner">
+        <a href="accueil.html">
+            <img src="assets/logo.svg" class="h-10" />
+        </a>
+
+        <nav class="hidden md:flex">
+            <ul class="flex items-center gap-7 text-[15px] font-[Poppins]">
+                <li><a href="acceuil.html" class="text-[#545252] font-bold">Accueil</a></li>
+                <li><a href="valide.html" class="text-[#545252] font-bold">Mes demandes</a></li>
+                <li><a href="assistant d'enchainement.html" class="text-[#545252] font-bold">Nouvelle demande</a></li>
+                <li><a href="assistantchat.html" class="text-[#545252] font-bold">Chatbot</a></li>
+                <li><a href="mesdocuments.html" class="text-[#545252] font-bold">Mes documents</a></li>
+                <li><a href="historique.html" class="text-[#545252] font-bold">Historique</a></li>
+
+            </ul>
+        </nav>
+
+        <div class="flex items-center gap-4">
+            <button
+                    onclick="window.location.href='login1.html'"
+                    class="bg-[#6054ec] text-white px-4 py-2 rounded-full shadow-md font-semibold cursor-pointer"
+            >
+                Se Déconnecter
+            </button>
+            <a href="profile.html">
+                <img src="assets/man.svg" class="rounded-full cursor-pointer">
+            </a>
+        </div>
+    </div>
+</header>
+
+<main class="page">
+
+    <h1 class="section-title">MON PROFIL</h1>
+
+    <div class="profile-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png" class="profile-img" />
+        <div class="profile-info">
+            <p><span>Nom :</span> Haider Adolfo SCHENATO</p>
+            <p><span>Email :</span> Haider.Adolfo.SCHENATO@gmail.com</p>
+            <p><span>ID :</span> 5A1D4555</p>
+            <p><span>Classe :</span> 4TWIN6</p>
+        </div>
+    </div>
+
+    <!-- PARAMETRES -->
+    <div class="settings-container">
+
+        <div class="settings-group">
+            <div class="group-title">
+                <div class="plus-icon">+</div> Automatisation
+            </div>
+
+            <div class="setting-item">
+                <span>Auto-Remplissage</span>
+                <button class="ios-switch" data-state="off"><span class="ios-knob"></span></button>
+            </div>
+
+            <div class="setting-item">
+                <span>Alerte Automatique</span>
+                <button class="ios-switch" data-state="off"><span class="ios-knob"></span></button>
+            </div>
+
+            <div class="setting-item">
+                <span>Analyse prédictive des délais</span>
+                <button class="ios-switch" data-state="off"><span class="ios-knob"></span></button>
+            </div>
+        </div>
+
+        <div class="settings-group">
+            <div class="group-title">
+                <div class="plus-icon">+</div> Canal de notification
+            </div>
+
+            <div class="setting-item">
+                <span>WhatsApp 🟢</span>
+                <button class="ios-switch" data-state="on"><span class="ios-knob"></span></button>
+            </div>
+
+            <div class="setting-item">
+                <span>Mail 📧</span>
+                <button class="ios-switch" data-state="off"><span class="ios-knob"></span></button>
+            </div>
+
+            <div class="setting-item">
+                <span>SMS 📨</span>
+                <button class="ios-switch" data-state="off"><span class="ios-knob"></span></button>
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+<!-- FOOTER -->
+<!-- Footer -->
+<footer class="bg-white shadow-lg mt-auto">
+    <div class="max-w-7xl mx-auto px-12 py-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left text-gray-700">
+            <div>
+                <h3 class="text-lg font-bold text-black mb-3">DocuFast</h3>
+                <p class="text-sm leading-relaxed">Plateforme de gestion administrative universitaire.</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold text-black mb-3">Navigation</h3>
+                <div class="space-y-1 text-sm">
+                    <p>Accueil</p>
+                    <p>Mes demandes</p>
+                    <p>Documents validés</p>
+                    <p>Nouvelle demande</p>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold text-black mb-3">Contact</h3>
+                <div class="space-y-1 text-sm">
+                    <p>Email</p>
+                    <p>LinkedIn</p>
+                    <p>Facebook</p>
+                </div>
+            </div>
+        </div>
+        <div class="h-px bg-gray-300 my-6"></div>
+        <div class="text-center text-gray-500 text-sm">© 2025 DocuFast</div>
+    </div>
+</footer>
+<!-- JS Switch -->
+<script>
+    document.querySelectorAll('.ios-switch').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const isOn = btn.getAttribute("data-state") === "on";
+            btn.setAttribute("data-state", isOn ? "off" : "on");
+
+            const knob = btn.querySelector('.ios-knob');
+            knob.style.transform += " scale(1.2)";
+            setTimeout(() => {
+                knob.style.transform = knob.style.transform.replace(" scale(1.2)", "");
+            }, 150);
+        });
+    });
+</script>
+
+</body>
+</html>

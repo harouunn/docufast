@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documents validés - DocuFast</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Montserrat', 'sans-serif'] },
+          colors: {
+            primary: '#E64A19',
+            accent: '#5E35B1',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .check-tilt {
+      transform: rotate(-15deg);
+      display: inline-block;
+    }
+
+
+         /* NAVBAR */
+     .navbar {
+         width: 100%;
+         background: linear-gradient(90deg, #ffc0cb 0%, #fbcfe8 50%, #bfdbfe 100%);
+         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+         font-family: "Poppins", sans-serif;
+     }
+
+    .navbar-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav-link-active {
+        color: #b60c0c;
+        font-weight: 800;
+    }
+
+    /* FOOTER */
+    .footer {
+        width: 50%;
+        max-width:1200px;
+        margin: 24px auto;
+        padding:18px 20px 10px;
+        background:#fff;
+        border-radius:15px;
+        box-shadow:0 4px 4px 5px rgba(0,0,0,0.25);
+    }
+    .footer-inner {
+        display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap;
+    }
+    .footer-bottom {
+        border-top:1px solid #545252;
+        margin-top:10px; text-align:center; padding-top:8px;
+    }
+    .footer-block-title {
+        font-weight: 900;
+        font-size: 17px;
+        margin-bottom: 4px;
+    }
+
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-pink-100 via-purple-100 to-blue-200 text-gray-800 flex flex-col">
+
+  <!-- NAVBAR -->
+  <!-- 🔵 NAVBAR -->
+  <header class="navbar">
+      <div class="navbar-inner">
+          <a href="accueil.html">
+              <img src="assets/logo.svg" class="h-10" />
+          </a>
+
+          <nav class="hidden md:flex">
+              <ul class="flex items-center gap-7 text-[15px] font-[Poppins]">
+                  <li><a href="acceuil.html" class="text-[#545252] font-bold">Accueil</a></li>
+                  <li><a href="valide.html" class="text-[#B60C0C] font-bold">Mes demandes</a></li>
+                  <li><a href="assistant d'enchainement.html" class="text-[#545252] font-bold">Nouvelle demande</a></li>
+                  <li><a href="assistantchat.html" class="text-[#545252] font-bold">Chatbot</a></li>
+                  <li><a href="mesdocuments.html" class="text-[#545252] font-bold">Mes documents</a></li>
+                  <li><a href="historique.html" class="text-[#545252] font-bold">Historique</a></li>
+
+              </ul>
+          </nav>
+
+          <div class="flex items-center gap-4">
+              <button
+                      onclick="window.location.href='login1.html'"
+                      class="bg-[#6054ec] text-white px-4 py-2 rounded-full shadow-md font-semibold cursor-pointer"
+              >
+                  Se Déconnecter
+              </button>
+              <a href="profile.html">
+                  <img src="assets/man.svg" class="rounded-full cursor-pointer">
+              </a>
+          </div>
+      </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="flex-1 py-20 px-4">
+    <!-- Titre avec coche -->
+    <div class="text-center mb-16">
+      <div class="flex items-center justify-center gap-6">
+        <span class="material-icons text-primary check-tilt" style="font-size: 80px;">check</span>
+        <h1 class="text-4xl font-bold text-gray-700 tracking-wide">
+          VOTRE DEMANDE EST PRÉS!
+        </h1>
+      </div>
+    </div>
+
+    <!-- Tableau -->
+    <div class="max-w-3xl mx-auto rounded-3xl shadow-2xl overflow-hidden border-2 border-gray-200">
+      
+      <!-- En-tête -->
+      <div class="px-8 py-4 grid grid-cols-3 text-sm font-bold text-gray-700 uppercase" style="background-color: #EDDED7;">
+        <div>Votre demande</div>
+        <div class="text-center">Télécharger</div>
+        <div class="text-center">Action</div>
+      </div>
+
+      <!-- Ligne 1 - CERTIFICAT DE SCOLARITÉ -->
+      <div class="px-8 py-6 border-b-2 border-gray-100 grid grid-cols-3 items-center" style="background-color: #FFF6F6;">
+        <div class="flex items-center gap-4">
+          <span class="material-icons text-3xl text-red-400">description</span>
+          <span class="text-base font-semibold text-gray-800">CERTIFICAT DE SCOLARITÉ</span>
+        </div>
+        <div class="text-center">
+          <button class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors shadow-lg mx-auto">
+            <span class="material-icons text-white text-2xl">download</span>
+          </button>
+        </div>
+        <div class="text-center">
+          <a href="#" class="inline-flex items-center gap-2 text-accent font-semibold hover:text-primary transition-colors">
+            <span class="material-icons text-xl">visibility</span>
+            <span class="text-sm">voir détails</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Ligne 2 - RELEVÉ DE NOTE -->
+      <div class="px-8 py-6 border-b-2 border-gray-100 grid grid-cols-3 items-center" style="background-color: #FFFEF1;">
+        <div class="flex items-center gap-4">
+          <span class="material-icons text-3xl text-red-400">description</span>
+          <span class="text-base font-semibold text-gray-800">RELEVÉ DE NOTE</span>
+        </div>
+        <div class="text-center">
+          <button class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors shadow-lg mx-auto">
+            <span class="material-icons text-white text-2xl">download</span>
+          </button>
+        </div>
+        <div class="text-center">
+          <a href="#" class="inline-flex items-center gap-2 text-accent font-semibold hover:text-primary transition-colors">
+            <span class="material-icons text-xl">visibility</span>
+            <span class="text-sm">voir détails</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Ligne 3 - CARTE ÉTUDIANT -->
+      <div class="px-8 py-6 grid grid-cols-3 items-center" style="background-color: #FFF6F6;">
+        <div class="flex items-center gap-4">
+          <span class="material-icons text-3xl text-red-400">description</span>
+          <span class="text-base font-semibold text-gray-800">CARTE ÉTUDIANT</span>
+        </div>
+        <div class="text-center">
+          <button class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors shadow-lg mx-auto">
+            <span class="material-icons text-white text-2xl">download</span>
+          </button>
+        </div>
+        <div class="text-center">
+          <a href="#" class="inline-flex items-center gap-2 text-accent font-semibold hover:text-primary transition-colors">
+            <span class="material-icons text-xl">visibility</span>
+            <span class="text-sm">voir détails</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white shadow-lg mt-auto">
+    <div class="max-w-7xl mx-auto px-12 py-10">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left text-gray-700">
+        <div>
+          <h3 class="text-lg font-bold text-black mb-3">DocuFast</h3>
+          <p class="text-sm leading-relaxed">Plateforme de gestion administrative universitaire.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-black mb-3">Navigation</h3>
+          <div class="space-y-1 text-sm">
+            <p>Accueil</p>
+            <p>Mes demandes</p>
+            <p>Documents validés</p>
+            <p>Nouvelle demande</p>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-black mb-3">Contact</h3>
+          <div class="space-y-1 text-sm">
+            <p>Email</p>
+            <p>LinkedIn</p>
+            <p>Facebook</p>
+          </div>
+        </div>
+      </div>
+      <div class="h-px bg-gray-300 my-6"></div>
+      <div class="text-center text-gray-500 text-sm">© 2025 DocuFast</div>
+    </div>
+  </footer>
+
+</body>
+</html>

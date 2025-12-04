@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <title>Upload Attestation</title>
+    <style>
+
+
+        /* NAVBAR */
+        .navbar {
+            width: 100%;
+            background: linear-gradient(90deg, #ffc0cb 0%, #fbcfe8 50%, #bfdbfe 100%);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+            font-family: "Poppins", sans-serif;
+        }
+
+        .navbar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-link-active {
+            color: #b60c0c;
+            font-weight: 800;
+        }
+
+        /* FOOTER */
+        .footer {
+            width: 50%;
+            max-width:1200px;
+            margin: 24px auto;
+            padding:18px 20px 10px;
+            background:#fff;
+            border-radius:15px;
+            box-shadow:0 4px 4px 5px rgba(0,0,0,0.25);
+        }
+        .footer-inner {
+            display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap;
+        }
+        .footer-bottom {
+            border-top:1px solid #545252;
+            margin-top:10px; text-align:center; padding-top:8px;
+        }
+        .footer-block-title {
+            font-weight: 900;
+            font-size: 17px;
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+
+<body class="bg-white font-Poppins">
+
+<!-- 🔵 NAVBAR -->
+<header class="navbar">
+    <div class="navbar-inner">
+        <a href="accueil.html">
+            <img src="assets/logo.svg" class="h-10" />
+        </a>
+
+        <nav class="hidden md:flex">
+            <ul class="flex items-center gap-7 text-[15px] font-[Poppins]">
+                <li><a href="acceuil.html" class="text-[#545252] font-bold">Accueil</a></li>
+                <li><a href="valide.html" class="text-[#545252] font-bold">Mes demandes</a></li>
+                <li><a href="assistant d'enchainement.html" class="text-[#B60C0C] font-bold">Nouvelle demande</a></li>
+                <li><a href="assistantchat.html" class="text-[#545252] font-bold">Chatbot</a></li>
+                <li><a href="mesdocuments.html" class="text-[#545252] font-bold">Mes documents</a></li>
+                <li><a href="historique.html" class="text-[#545252] font-bold">Historique</a></li>
+
+            </ul>
+        </nav>
+
+        <div class="flex items-center gap-4">
+            <button
+                    onclick="window.location.href='login1.html'"
+                    class="bg-[#6054ec] text-white px-4 py-2 rounded-full shadow-md font-semibold cursor-pointer"
+            >
+                Se Déconnecter
+            </button>
+            <a href="profile.html">
+                <img src="assets/man.svg" class="rounded-full cursor-pointer">
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- ▬▬▬▬▬ SECTION UPLOAD ▬▬▬▬▬ -->
+  <section class="w-full bg-gradient-to-br from-pink-100 to-blue-100 py-20">
+
+    <div class="max-w-4xl mx-auto text-center space-y-10">
+
+      <h2 class="text-3xl font-bold">Attestation de stage</h2>
+      <p class="text-lg">Veuillez corriger votre document</p>
+
+      <!-- Icône cloud -->
+      <div class="flex justify-center">
+        <img src="assets/cloud_upload.svg" class="w-40 opacity-80" />
+      </div>
+
+      <h3 class="text-3xl font-bold">Upload your file here or</h3>
+
+      <!-- Boutons Upload -->
+      <div class="flex items-center justify-center gap-4">
+
+        <!-- Browse Button -->
+        <label id="browseBtn" class="cursor-pointer bg-blue-600 text-white px-6 py-3 rounded-full font-semibold flex items-center gap-2 shadow">
+          <input type="file" id="fileInput" class="hidden">
+          Parcourir les fichiers
+        </label>
+
+        <!-- Icône ajout photo -->
+        <button id="photoBtn" class="w-14 h-14 flex items-center justify-center bg-white rounded-xl shadow">
+          <img src="assets/add_photo.svg" class="w-6 h-6" />
+        </button>
+      </div>
+
+      <!-- Aperçu fichier -->
+      <div id="preview" class="mt-4"></div>
+
+      <button class="mt-6 px-10 py-3 bg-blue-600 text-white rounded-full text-xl font-bold shadow">
+        Valider
+      </button>
+
+    </div>
+
+  </section>
+
+<!-- Footer -->
+<footer class="bg-white shadow-lg mt-auto">
+    <div class="max-w-7xl mx-auto px-12 py-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left text-gray-700">
+            <div>
+                <h3 class="text-lg font-bold text-black mb-3">DocuFast</h3>
+                <p class="text-sm leading-relaxed">Plateforme de gestion administrative universitaire.</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold text-black mb-3">Navigation</h3>
+                <div class="space-y-1 text-sm">
+                    <p>Accueil</p>
+                    <p>Mes demandes</p>
+                    <p>Documents validés</p>
+                    <p>Nouvelle demande</p>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold text-black mb-3">Contact</h3>
+                <div class="space-y-1 text-sm">
+                    <p>Email</p>
+                    <p>LinkedIn</p>
+                    <p>Facebook</p>
+                </div>
+            </div>
+        </div>
+        <div class="h-px bg-gray-300 my-6"></div>
+        <div class="text-center text-gray-500 text-sm">© 2025 DocuFast</div>
+    </div>
+</footer>
+
+
+<!-- ▬▬▬▬▬ JAVASCRIPT UPLOAD + PREVIEW ▬▬▬▬▬ -->
+  <script>
+    const fileInput = document.getElementById("fileInput");
+    const browseBtn = document.getElementById("browseBtn");
+    const photoBtn = document.getElementById("photoBtn");
+    const preview = document.getElementById("preview");
+
+    // Clic bouton "Parcourir"
+    browseBtn.addEventListener("click", () => fileInput.click());
+
+    // Clic icône "Ajouter photo"
+    photoBtn.addEventListener("click", () => fileInput.click());
+
+    // Quand un fichier est choisi
+    fileInput.addEventListener("change", () => {
+      if (!fileInput.files || !fileInput.files[0]) return;
+
+      const file = fileInput.files[0];
+      preview.innerHTML = `
+        <p class="text-gray-700">Fichier sélectionné : <b>${file.name}</b></p>
+      `;
+
+      if (file.type.startsWith("image/")) {
+        const img = document.createElement("img");
+        img.src = URL.createObjectURL(file);
+        img.className = "mt-4 mx-auto w-48 h-auto rounded-lg shadow";
+        preview.appendChild(img);
+      }
+    });
+  </script>
+
+</body>
+</html>

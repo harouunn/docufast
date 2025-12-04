@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocuFast - Se Connecter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-blue-100 via-pink-100 to-yellow-100 flex items-center justify-center p-4">
+
+<div class="rounded-3xl shadow-2xl p-8 w-full max-w-md" style="background-color:#FFF6F6;">
+
+    <!-- Logo -->
+    <div class="flex justify-end mb-6">
+        <div class="flex items-center gap-4 -ml-4">
+            <img src="logo-docufast.png" alt="DocuFast" class="h-14">
+            <div>
+                <div class="font-bold text-gray-900 text-xl">DocuFast</div>
+                <div class="text-xs text-gray-600 -mt-1">Plateforme de gestion administrative universitaire</div>
+            </div>
+        </div>
+    </div>
+
+    <h1 class="text-3xl font-bold text-center mb-8">SE CONNECTER</h1>
+
+    <!-- Tabs -->
+    <div id="roleTabs" class="flex gap-2 mb-8">
+        <button data-role="etudiant" class="tab-btn flex-1 bg-indigo-600 text-white py-2.5 rounded-full font-semibold text-xs">
+            ÉTUDIANT
+        </button>
+
+        <button data-role="enseignant" class="tab-btn flex-1 bg-white text-gray-700 py-2.5 rounded-full font-semibold border-2 border-gray-300 text-xs">
+            ENSEIGNANT
+        </button>
+
+        <button data-role="admin" class="tab-btn flex-1 bg-white text-gray-700 py-2.5 rounded-full font-semibold border-2 border-gray-300 text-xs">
+            ADMINISTRATION
+        </button>
+    </div>
+
+    <!-- Form -->
+    <form class="space-y-6" onsubmit="return false;">
+
+        <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-2">IDENTIFIANT :</label>
+            <input type="text" class="w-full px-4 py-3 rounded-full border-2 border-gray-300 bg-white">
+        </div>
+
+        <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-2">MOT DE PASSE :</label>
+            <input type="password" class="w-full px-4 py-3 rounded-full border-2 border-gray-300 bg-white">
+        </div>
+
+        <div class="flex items-center gap-2">
+            <input type="checkbox" id="robot" class="w-4 h-4">
+            <label for="robot" class="text-sm text-gray-600">Je ne suis pas un robot</label>
+        </div>
+
+        <!-- Login Button -->
+        <button
+                id="loginBtn"
+                type="button"
+                class="w-full bg-indigo-600 text-white py-3 rounded-full font-semibold hover:bg-indigo-700 shadow-lg"
+        >
+            SE CONNECTER
+        </button>
+
+        <div class="text-center">
+            <a href="#" class="font-semibold hover:underline text-[#B60C0C]">AIDE ?</a>
+        </div>
+    </form>
+</div>
+
+<script>
+    // Default selected role
+    let selectedRole = "etudiant";
+
+    // Tab selection logic
+    const tabs = document.querySelectorAll(".tab-btn");
+
+    tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            tabs.forEach(t => {
+                t.classList.remove("bg-indigo-600", "text-white");
+                t.classList.add("bg-white", "text-gray-700", "border-2", "border-gray-300");
+            });
+
+            tab.classList.remove("bg-white", "text-gray-700", "border-2", "border-gray-300");
+            tab.classList.add("bg-indigo-600", "text-white");
+
+            selectedRole = tab.dataset.role;
+            console.log("Role sélectionné :", selectedRole);
+        });
+    });
+
+    // Redirect logic
+    document.getElementById("loginBtn").addEventListener("click", () => {
+        if (selectedRole === "etudiant") {
+            window.location.href = "acceuil.html";
+        }
+        else if (selectedRole === "admin") {
+            window.location.href = "index.html";
+        }
+        else if (selectedRole === "enseignant") {
+            window.location.href = "enseignant.html"; // Change to your page
+        }
+    });
+</script>
+
+</body>
+</html>

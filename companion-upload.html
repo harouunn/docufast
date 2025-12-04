@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Compagnon IA Multimodal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <style>
+    body {
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+  </style>
+</head>
+
+<body class="font-[Montserrat,_sans-serif] min-h-screen bg-gradient-to-b from-[#FFDEE3] via-[#FFF3F5] to-[#E4E4FF]">
+
+<!-- ✅ NAVBAR COMPLÈTE — Compagnon IA ACTIF -->
+<header class="bg-gradient-to-r from-[#FFC6C9] via-[#D8A7E7] to-[#6054EC] shadow-sm">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    
+    <!-- Logo -->
+    <div class="flex items-center gap-3">
+      <img src="logo-docufast.png" class="h-10 w-auto" alt="Logo DocuFast" />
+      <p class="hidden sm:block text-xs text-white/80 leading-tight">
+        Gérez vos documents académiques
+      </p>
+    </div>
+
+    <!-- Desktop navbar -->
+    <nav class="hidden md:flex">
+      <ul class="flex items-center gap-6 text-[14px] font-[Poppins]">
+        <li><a href="index.html" class="text-white font-semibold">Accueil</a></li>
+        <li><a href="mesdocuments.html" class="text-white font-semibold">Mes documents</a></li>
+        <li><a href="calandrier.html" class="text-white font-semibold">Calendrier</a></li>
+        <li><a href="assistant.html" class="text-white font-semibold">Assistant</a></li>
+        <li><a href="tableau-bord.html" class="text-white font-semibold">Tableau de bord</a></li>
+        <li><a href="scenario-urgence.html" class="text-white font-semibold">Scénario d'urgence</a></li>
+        <li><a href="companion-upload.html" class="text-[#B60C0C] font-bold">Compagnon IA</a></li>
+      </ul>
+    </nav>
+
+    <!-- Right section -->
+    <div class="hidden md:flex items-center gap-4">
+      <button class="px-4 py-1.5 rounded-2xl bg-[#6054EC] text-white text-xs font-bold shadow-lg">
+        Se Déconnecter
+      </button>
+
+      <div class="h-10 w-10 rounded-full bg-white flex items-center justify-center text-[#6054EC] font-bold">
+        F
+      </div>
+    </div>
+
+    <!-- Mobile button -->
+    <button id="menuBtn" class="md:hidden material-icons text-white text-3xl">
+      menu
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu"
+       class="hidden flex flex-col bg-white text-[#222] px-6 py-4 space-y-2 md:hidden shadow">
+
+    <a href="index.html" class="font-semibold">Accueil</a>
+    <a href="mesdocuments.html" class="font-semibold">Mes documents</a>
+    <a href="calendrier.html" class="font-semibold">Calendrier</a>
+    <a href="assistant.html" class="font-semibold">Assistant</a>
+    <a href="tableau-bord.html" class="font-semibold">Tableau de bord</a>
+    <a href="scenario-urgence.html" class="font-semibold">Scénario d'urgence</a>
+    <a href="companion-upload.html" class="font-bold text-[#B60C0C]">Compagnon IA</a>
+
+    <button class="w-full px-4 py-2 rounded-xl bg-[#6054EC] text-white font-bold mt-3">
+      Se Déconnecter
+    </button>
+  </div>
+</header>
+
+<script>
+  document.getElementById("menuBtn").addEventListener("click", () => {
+    document.getElementById("mobileMenu").classList.toggle("hidden");
+  });
+</script>
+
+<!-- PAGE CONTENT -->
+<main class="max-w-6xl mx-auto px-6 pb-16 bg-[#FFF9FA]/95 rounded-b-2xl shadow-lg">
+
+  <section class="text-center pt-10">
+    <h1 class="text-4xl md:text-5xl font-extrabold text-[#222020] tracking-wide">
+      COMPAGNON IA MULTIMODAL
+    </h1>
+    <p class="mt-3 text-[#545252] text-sm md:text-base">
+      Extraire automatiquement des tâches depuis photos ou notes manuscrites.
+    </p>
+  </section>
+
+  <!-- UPLOAD CARD -->
+  <div class="mt-10 bg-pink-200 rounded-3xl shadow-lg p-6 md:p-8">
+    <div class="bg-white rounded-3xl border-2 border-dashed border-gray-300 flex flex-col items-center justify-center h-56 md:h-64 px-6">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mb-4 text-gray-700"
+           fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+              d="M7 16a4 4 0 010-8 5 5 0 019.584-1.003A4.5 4.5 0 1118 16H7z" />
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+              d="M12 12v6m0 0l-3-3m3 3l3-3" />
+      </svg>
+
+      <p class="text-sm md:text-base text-gray-700 text-center leading-relaxed">
+        Glissez une photo ou note manuscrite<br>
+        <span class="text-gray-500">ou cliquez pour uploader</span>
+      </p>
+    </div>
+
+    <div class="mt-6 flex items-center gap-3">
+      <button class="flex-1 bg-emerald-500 hover:bg-emerald-600 text-white font-medium py-3 rounded-full transition-colors">
+        Analyser
+      </button>
+
+      <button
+        class="h-8 w-8 flex items-center justify-center rounded-full border border-gray-400 text-xs text-gray-600 bg-white"
+        title="Plus d'informations">
+        i
+      </button>
+    </div>
+  </div>
+
+  <!-- TASKS -->
+  <section class="mt-8 bg-pink-200 rounded-3xl shadow-md p-5 md:p-6">
+    <p class="text-xs md:text-sm text-gray-700 mb-4">
+      2 tâches détectées :
+    </p>
+
+    <div class="space-y-3">
+      <div class="bg-white rounded-full px-4 py-2 text-sm text-gray-700 shadow-sm">
+        Réunion lundi 14 h
+      </div>
+      <div class="bg-white rounded-full px-4 py-2 text-sm text-gray-700 shadow-sm">
+        Rappel facture
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="mt-10 pb-10 px-4">
+  <div class="max-w-5xl mx-auto bg-white rounded-2xl shadow-lg px-8 py-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="text-[18px] font-extrabold">DocuFast</h3>
+        <p class="text-[15px]">Plateforme de gestion administrative universitaire.</p>
+      </div>
+
+      <div>
+        <h3 class="text-[16px] font-extrabold">Navigation</h3>
+        <p>Accueil<br>Mes demandes<br>Documents validés<br>Nouvelle demande</p>
+      </div>
+
+      <div>
+        <h3 class="text-[16px] font-extrabold">Contact</h3>
+        <p>Email<br>LinkedIn<br>Facebook</p>
+      </div>
+    </div>
+
+    <div class="border-t pt-3 text-center text-sm">
+      © 2025 DocuFast
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
