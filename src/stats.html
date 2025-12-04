@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>DocuFast – Statistiques</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&display=swap"
+            rel="stylesheet"
+    />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            background:#f4f4ff;
+            font-family:"Montserrat", sans-serif;
+        }
+
+        /* NAVBAR GRADIENT */
+        .navbar {
+            width: 100%;
+            background: linear-gradient(90deg, #ffc0cb 0%, #fbcfe8 50%, #bfdbfe 100%);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+        }
+
+        .navbar, .navbar * {
+            font-family: "Poppins", sans-serif !important;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+<!-- 🔵 NAVBAR -->
+<header class="navbar">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+        <a href="acceuil.html" class="flex items-center gap-2">
+            <img src="assets/logo.svg" class="h-10" alt="DocuFast logo" />
+        </a>
+
+        <nav class="hidden md:flex">
+            <ul class="flex items-center gap-7 text-[15px]">
+                <li><a href="acceuil.html" class="text-[#545252] font-bold">Accueil</a></li>
+                <li><a href="valide.html" class="text-[#545252] font-bold">Mes demandes</a></li>
+                <li><a href="assistant d'enchainement.html" class="text-[#545252] font-bold">Nouvelle demande</a></li>
+                <li><a href="assistantchat.html" class="text-[#545252] font-bold">Chatbot</a></li>
+                <li><a href="mesdocuments.html" class="text-[#545252] font-bold">Mes documents</a></li>
+                <li><a href="historique.html" class="text-[#B60C0C] font-bold">Historique</a></li>
+            </ul>
+        </nav>
+
+        <div class="flex items-center gap-4">
+            <button
+                    onclick="window.location.href='login1.html'"
+                    class="bg-[#6054EC] text-white px-4 py-2 rounded-full shadow-md font-semibold cursor-pointer text-sm"
+            >
+                Se Déconnecter
+            </button>
+            <a href="profile.html">
+                <img src="assets/man.svg" class="rounded-full cursor-pointer" alt="Profil" />
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- 🟣 CONTENU PRINCIPAL -->
+<main class="flex-1 max-w-6xl w-full mx-auto px-6 py-10 space-y-10">
+
+    <!-- Titre principal -->
+    <section>
+        <h1 class="text-3xl md:text-4xl font-extrabold tracking-wide text-gray-900">
+            STATISTIQUE
+        </h1>
+        <p class="mt-2 text-sm text-gray-600">
+            Vue globale de l’activité et de l'état de vos demandes sur DocuFast.
+        </p>
+    </section>
+
+    <!-- Bloc graphique + résumé -->
+    <section class="bg-white rounded-2xl shadow-md border border-gray-200 p-6 md:p-8">
+        <div class="flex flex-col md:flex-row justify-between gap-4 items-start md:items-center mb-6">
+            <h2 class="text-lg md:text-xl font-semibold text-gray-800">
+                Activité travail
+            </h2>
+
+            <div class="flex items-center gap-2 text-sm font-medium text-blue-600">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8
+                    8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                </svg>
+                <span>x Heures par jour</span>
+            </div>
+        </div>
+
+        <!-- Zone graphique -->
+        <div class="border border-gray-200 rounded-lg p-4 md:p-6">
+            <!-- grille + courbe -->
+            <div class="relative h-48 md:h-56">
+                <!-- Grille horizontale -->
+                <div class="absolute inset-0 flex flex-col justify-between">
+                    <div class="border-t border-gray-200"></div>
+                    <div class="border-t border-gray-200"></div>
+                    <div class="border-t border-gray-200"></div>
+                    <div class="border-t border-gray-200"></div>
+                    <div class="border-t border-gray-200"></div>
+                </div>
+
+                <!-- Courbe -->
+                <svg viewBox="0 0 100 40" class="w-full h-full relative">
+                    <!-- ligne de fond -->
+                    <polyline
+                            points="0,30 15,28 30,29 45,24 60,22 75,33 90,36 100,38"
+                            fill="none"
+                            stroke="#3b82f6"
+                            stroke-width="1.8"
+                            stroke-opacity="0.8"
+                    />
+                    <!-- points -->
+                    <g fill="#3b82f6">
+                        <circle cx="0" cy="30" r="1.2"></circle>
+                        <circle cx="15" cy="28" r="1.2"></circle>
+                        <circle cx="30" cy="29" r="1.2"></circle>
+                        <circle cx="45" cy="24" r="1.2"></circle>
+                        <circle cx="60" cy="22" r="1.2"></circle>
+                        <circle cx="75" cy="33" r="1.2"></circle>
+                        <circle cx="90" cy="36" r="1.2"></circle>
+                        <circle cx="100" cy="38" r="1.2"></circle>
+                    </g>
+                </svg>
+            </div>
+
+            <!-- Légendes -->
+            <div class="mt-4 flex justify-between text-xs text-gray-500">
+                <span>Lun</span>
+                <span>Mar</span>
+                <span>Mer</span>
+                <span>Jeu</span>
+                <span>Ven</span>
+                <span>Sam</span>
+                <span>Dim</span>
+            </div>
+
+            <div class="mt-2 flex justify-between text-xs text-gray-500">
+                <span>4h</span>
+                <span>3h</span>
+                <span>2h</span>
+                <span>1h</span>
+                <span>0h</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cartes Organisation / Stages / Attestations -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Organisation -->
+        <div class="bg-white rounded-2xl shadow-md border border-gray-200 p-6 flex flex-col gap-4">
+            <div class="flex items-center justify-between">
+                <div class="w-14 h-14 rounded-xl bg-blue-50 border border-gray-200 flex items-center justify-center">
+                    <svg class="w-6 h-6 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3
+                        1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8
+                        5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7
+                        3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8
+                        0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97
+                        3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                    </svg>
+                </div>
+                <span class="text-2xl font-bold text-blue-600">40%</span>
+            </div>
+
+            <div>
+                <p class="font-semibold text-gray-800 text-lg">Organisation</p>
+                <div class="mt-3 w-full h-2 bg-gray-200 rounded-full">
+                    <div class="h-2 bg-blue-500 rounded-full" style="width: 40%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stages -->
+        <div class="bg-white rounded-2xl shadow-md border border-gray-200 p-6 flex flex-col gap-4">
+            <div class="flex items-center justify-between">
+                <div class="w-14 h-14 rounded-xl bg-purple-50 border border-gray-200 flex items-center justify-center">
+                    <svg class="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2
+                        2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2
+                        2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6
+                        0h-4V4h4v2z"/>
+                    </svg>
+                </div>
+                <span class="text-2xl font-bold text-purple-600">40%</span>
+            </div>
+
+            <div>
+                <p class="font-semibold text-gray-800 text-lg">Stages</p>
+                <div class="mt-3 w-full h-2 bg-gray-200 rounded-full">
+                    <div class="h-2 bg-purple-600 rounded-full" style="width: 40%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Attestations -->
+        <div class="bg-white rounded-2xl shadow-md border border-gray-200 p-6 flex flex-col gap-4">
+            <div class="flex items-center justify-between">
+                <div class="w-14 h-14 rounded-xl bg-green-50 border border-gray-200 flex items-center justify-center">
+                    <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M14 2H6c-1.1 0-1.99.9-1.99
+                        2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9
+                        2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+                    </svg>
+                </div>
+                <span class="text-2xl font-bold text-green-600">40%</span>
+            </div>
+
+            <div>
+                <p class="font-semibold text-gray-800 text-lg">Attestations</p>
+                <div class="mt-3 w-full h-2 bg-gray-200 rounded-full">
+                    <div class="h-2 bg-green-600 rounded-full" style="width: 40%;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Temps moyen + Évolution de la semaine -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Temps moyen de traitement -->
+        <div class="bg-white rounded-2xl shadow-md border border-gray-200 p-6 flex flex-col gap-4">
+            <div class="flex items-center gap-4">
+                <div class="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center">
+                    <svg class="w-7 h-7 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47
+                        10 9.99 10C17.52 22 22 17.52 22
+                        12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8
+                        8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25
+                        3.15.75-1.23-4.5-2.67z"/>
+                    </svg>
+                </div>
+                <div>
+                    <p class="text-lg font-semibold text-gray-800">
+                        Temps moyen de traitement
+                    </p>
+                    <p class="mt-2 text-2xl font-bold text-red-600">
+                        1:35:20 heures
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Evolution de la semaine -->
+        <div class="bg-white rounded-2xl shadow-md border border-gray-200 p-6 flex flex-col gap-4">
+            <p class="text-lg font-semibold text-gray-800">
+                Evolution de la semaine
+            </p>
+
+            <div class="mt-2 flex items-end gap-4 h-32">
+                <!-- Chaque barre -->
+                <div class="flex flex-col items-center flex-1">
+                    <div class="w-8 bg-red-600 rounded-t-md" style="height: 90%;"></div>
+                    <span class="mt-2 text-xs text-gray-500">Lun</span>
+                </div>
+                <div class="flex flex-col items-center flex-1">
+                    <div class="w-8 bg-red-600 rounded-t-md" style="height: 55%;"></div>
+                    <span class="mt-2 text-xs text-gray-500">Mar</span>
+                </div>
+                <div class="flex flex-col items-center flex-1">
+                    <div class="w-8 bg-red-600 rounded-t-md" style="height: 70%;"></div>
+                    <span class="mt-2 text-xs text-gray-500">Mer</span>
+                </div>
+                <div class="flex flex-col items-center flex-1">
+                    <div class="w-8 bg-red-600 rounded-t-md" style="height: 100%;"></div>
+                    <span class="mt-2 text-xs text-gray-500">Jeu</span>
+                </div>
+                <div class="flex flex-col items-center flex-1">
+                    <div class="w-8 bg-red-600 rounded-t-md" style="height: 40%;"></div>
+                    <span class="mt-2 text-xs text-gray-500">Ven</span>
+                </div>
+                <div class="flex flex-col items-center flex-1">
+                    <div class="w-8 bg-red-600 rounded-t-md" style="height: 15%;"></div>
+                    <span class="mt-2 text-xs text-gray-500">Sam</span>
+                </div>
+                <div class="flex flex-col items-center flex-1">
+                    <div class="w-8 bg-red-600 rounded-t-md" style="height: 10%;"></div>
+                    <span class="mt-2 text-xs text-gray-500">Dim</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Suivi général -->
+    <section class="bg-white rounded-2xl shadow-md border border-gray-200 p-6 md:p-8 space-y-6">
+        <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-gray-800 -rotate-90" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+            </svg>
+            <h2 class="text-xl font-semibold text-gray-800">
+                SUIVI GENERAL
+            </h2>
+        </div>
+
+        <!-- Demandes validées -->
+        <div>
+            <div class="flex justify-between text-sm mb-2">
+                <span class="text-gray-700 font-medium">Demandes Validées</span>
+                <span class="text-emerald-500 font-semibold">72%</span>
+            </div>
+            <div class="h-2 rounded-full bg-gray-200">
+                <div class="h-2 rounded-full bg-emerald-500" style="width: 72%;"></div>
+            </div>
+        </div>
+
+        <!-- Demandes en cours -->
+        <div>
+            <div class="flex justify-between text-sm mb-2">
+                <span class="text-gray-700 font-medium">Demandes en cours</span>
+                <span class="text-orange-500 font-semibold">50%</span>
+            </div>
+            <div class="h-2 rounded-full bg-gray-200">
+                <div class="h-2 rounded-full bg-orange-500" style="width: 50%;"></div>
+            </div>
+        </div>
+
+        <!-- Demandes refusées -->
+        <div>
+            <div class="flex justify-between text-sm mb-2">
+                <span class="text-gray-700 font-medium">Demandes Refusées</span>
+                <span class="text-red-500 font-semibold">25%</span>
+            </div>
+            <div class="h-2 rounded-full bg-gray-200">
+                <div class="h-2 rounded-full bg-red-500" style="width: 25%;"></div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- 🦶 FOOTER -->
+<footer class="bg-white shadow-lg mt-10">
+    <div class="max-w-7xl mx-auto px-12 py-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left text-gray-700">
+            <div>
+                <h3 class="text-lg font-bold text-black mb-3">DocuFast</h3>
+                <p class="text-sm leading-relaxed">Plateforme de gestion administrative universitaire.</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold text-black mb-3">Navigation</h3>
+                <div class="space-y-1 text-sm">
+                    <p>Accueil</p>
+                    <p>Mes demandes</p>
+                    <p>Documents validés</p>
+                    <p>Nouvelle demande</p>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold text-black mb-3">Contact</h3>
+                <div class="space-y-1 text-sm">
+                    <p>Email</p>
+                    <p>LinkedIn</p>
+                    <p>Facebook</p>
+                </div>
+            </div>
+        </div>
+        <div class="h-px bg-gray-300 my-6"></div>
+        <div class="text-center text-gray-500 text-sm">© 2025 DocuFast</div>
+    </div>
+</footer>
+
+</body>
+</html>
