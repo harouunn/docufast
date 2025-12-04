@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tableau de Bord Évolutif</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts + Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <style>
+    body {
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+  </style>
+</head>
+
+<body class="font-[Montserrat,_sans-serif] min-h-screen bg-gradient-to-b from-[#FFDEE3] via-[#FFF3F5] to-[#E4E4FF]">
+
+  <!-- ✅ NAVBAR AVEC TOUTES LES INTERFACES -->
+  <header class="bg-gradient-to-r from-[#FFC6C9] via-[#D8A7E7] to-[#6054EC] shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="logo-docufast.png" class="h-10 w-auto" alt="Logo DocuFast" />
+        <p class="hidden sm:block text-xs text-white/80 leading-tight">
+          Gérez vos documents académiques
+        </p>
+      </div>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex">
+        <ul class="flex items-center gap-6 text-[14px] font-[Poppins]">
+          <li><a href="index.html" class="text-[#FDFDFD] font-semibold">Accueil</a></li>
+          <li><a href="mesdocuments.html" class="text-[#FDFDFD] font-semibold">Mes documents</a></li>
+          <li><a href="calendrier.html" class="text-[#FDFDFD] font-semibold">Calendrier</a></li>
+          <li><a href="assistant.html" class="text-[#FDFDFD] font-semibold">Assistant</a></li>
+          <li><a href="tableau-bord.html" class="text-[#B60C0C] font-bold">Tableau de bord</a></li>
+          <li><a href="scenario-urgence.html" class="text-[#FDFDFD] font-semibold">Scénario d'urgence</a></li>
+          <li><a href="companion-upload.html" class="text-[#FDFDFD] font-semibold">Compagnon IA</a></li>
+        </ul>
+      </nav>
+
+      <div class="hidden md:flex items-center gap-4">
+        <button
+          class="px-4 py-1.5 rounded-2xl bg-[#6054EC] text-white text-xs font-bold shadow-lg">
+          Se Déconnecter
+        </button>
+        <div
+          class="h-10 w-10 rounded-full bg-white flex items-center justify-center text-[#6054EC] font-bold">
+          F
+        </div>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button id="menuBtn" class="md:hidden material-icons text-white text-3xl">
+        menu
+      </button>
+    </div>
+
+    <!-- Mobile nav -->
+    <div id="mobileMenu"
+         class="hidden flex flex-col bg-white text-[#222] px-6 py-4 space-y-2 md:hidden shadow">
+      <a href="index.html" class="font-semibold">Accueil</a>
+      <a href="mesdocuments.html" class="font-semibold">Mes documents</a>
+      <a href="calendrier.html" class="font-semibold">Calendrier</a>
+      <a href="assistant.html" class="font-semibold">Assistant</a>
+      <a href="tableau-bord.html" class="font-bold text-[#B60C0C]">Tableau de bord</a>
+      <a href="scenario-urgence.html" class="font-semibold">Scénario d'urgence</a>
+      <a href="companion-upload.html" class="font-semibold">Compagnon IA</a>
+
+      <button class="w-full px-4 py-2 rounded-xl bg-[#6054EC] text-white font-bold mt-3">
+        Se Déconnecter
+      </button>
+    </div>
+  </header>
+
+  <script>
+    document.getElementById("menuBtn").addEventListener("click", () => {
+      document.getElementById("mobileMenu").classList.toggle("hidden");
+    });
+  </script>
+
+  <!-- CONTENU PRINCIPAL -->
+  <main class="max-w-6xl mx-auto px-6 pb-16 bg-[#FFF9FA]/95 rounded-b-2xl shadow-lg">
+
+    <div class="max-w-4xl mx-auto px-4 py-10">
+
+      <!-- BIG PINK DASHBOARD CARD -->
+      <div class="bg-pink-200 rounded-[40px] shadow-lg px-6 md:px-10 py-10 md:py-12">
+
+        <!-- Header -->
+        <header class="text-center mb-8 md:mb-10">
+          <h1 class="text-2xl md:text-3xl font-extrabold tracking-wide mb-2 uppercase">
+            Tableau de bord évolutif
+          </h1>
+          <p class="text-sm md:text-base text-gray-700">
+            Montrer uniquement ce qui est pertinent maintenant.
+          </p>
+        </header>
+
+        <!-- Chart block -->
+        <section class="flex flex-col items-center">
+          <div
+            class="w-full max-w-md h-48 rounded-3xl overflow-hidden shadow-md bg-emerald-700 relative"
+          >
+            <!-- Fake grid -->
+            <div
+              class="absolute inset-0 opacity-40"
+              style="background-image:
+                linear-gradient(to right, rgba(255,255,255,0.3) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.3) 1px, transparent 1px);
+                background-size: 32px 32px;">
+            </div>
+
+            <!-- Line chart -->
+            <svg viewBox="0 0 100 50" class="absolute inset-3 text-white" preserveAspectRatio="none">
+              <polyline
+                fill="none"
+                stroke="white"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                points="4,42 18,35 32,30 46,33 60,25 74,27 88,15 96,8"
+              />
+            </svg>
+          </div>
+
+          <p class="mt-3 text-xs md:text-sm text-gray-700">
+            (*) Mise à jour automatique toutes les 5 min
+          </p>
+        </section>
+
+        <!-- Priority Tasks -->
+        <section class="mt-10 md:mt-12">
+          <h2 class="text-center text-xl md:text-2xl font-extrabold uppercase leading-tight mb-6">
+            Tâches prioritaires
+          </h2>
+
+          <div class="space-y-4">
+
+            <!-- Task 1 -->
+            <article class="flex items-start gap-4 bg-white rounded-2xl shadow-md px-4 py-3 md:px-5 md:py-4">
+              <div class="mt-1 flex items-center justify-center h-7 w-7 rounded-full border border-green-500 text-green-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+
+              <div>
+                <p class="text-sm md:text-base font-semibold text-gray-800">Finaliser rapport d’Avril</p>
+                <p class="text-xs md:text-sm text-gray-600">Échéance : aujourd’hui</p>
+              </div>
+            </article>
+
+            <!-- Task 2 -->
+            <article class="flex items-start gap-4 bg-white rounded-2xl shadow-md px-4 py-3 md:px-5 md:py-4">
+              <div class="mt-1 flex items-center justify-center h-7 w-7 rounded-full border border-blue-500 text-blue-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 16h-1v-4h-1m1-4h.01M12 3a9 9 0 100 18 9 9 0 000-18z"/>
+                </svg>
+              </div>
+
+              <div>
+                <p class="text-sm md:text-base font-semibold text-gray-800">Réviser présentation interne</p>
+                <p class="text-xs md:text-sm text-gray-600">Échéance : demain</p>
+              </div>
+            </article>
+
+            <!-- Task 3 -->
+            <article class="flex items-start gap-4 bg-white rounded-2xl shadow-md px-4 py-3 md:px-5 md:py-4">
+              <div class="mt-1 flex items-center justify-center h-7 w-7 rounded-full border border-red-400 text-red-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 9v4m0 4h.01M10.29 3.86L2.82 17a1.5 1.5 0 001.29 2.25h15.78A1.5 1.5 0 0021.18 17L13.71 3.86a1.5 1.5 0 00-2.42 0z"/>
+                </svg>
+              </div>
+
+              <div>
+                <p class="text-sm md:text-base font-semibold text-gray-800">Vérifier données envoyées par Léa</p>
+                <p class="text-xs md:text-sm text-gray-600">Échéance : demain</p>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="mt-10 pb-10 px-4">
+    <div class="max-w-5xl mx-auto bg-white rounded-2xl shadow-lg px-8 py-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-[18px] font-extrabold">DocuFast</h3>
+          <p class="text-[15px]">Plateforme de gestion administrative universitaire.</p>
+        </div>
+
+        <div>
+          <h3 class="text-[16px] font-extrabold">Navigation</h3>
+          <p>Accueil<br>Mes demandes<br>Documents validés<br>Nouvelle demande</p>
+        </div>
+
+        <div>
+          <h3 class="text-[16px] font-extrabold">Contact</h3>
+          <p>Email<br>LinkedIn<br>Facebook</p>
+        </div>
+      </div>
+
+      <div class="border-t pt-3 text-center text-sm">
+        © 2025 DocuFast
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
